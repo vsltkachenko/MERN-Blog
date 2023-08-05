@@ -16,8 +16,7 @@ export const createPost = async (req, res) => {
 
 			const __filename = fileURLToPath(import.meta.url)
 			const __dirname = dirname(__filename)
-
-			req.files.image.mv(path.join(__dirname, '..', 'uploads', fileName))
+			req.files.image.mv(path.join(__dirname, 'uploads', fileName))
 
 			const newPostWithImage = new Post({
 				username: user.username,
@@ -125,7 +124,7 @@ export const updatePost = async (req, res) => {
 		if (req.files) {
 			let fileName = Date.now().toString() + req.files.image.name
 			const __dirname = dirname(fileURLToPath(import.meta.url))
-			req.files.image.mv(path.join(__dirname, '..', 'uploads', fileName))
+			req.files.image.mv(path.join(__dirname, 'uploads', fileName))
 			post.imgUrl = fileName || ''
 		}
 
