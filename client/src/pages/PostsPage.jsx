@@ -13,7 +13,7 @@ export const PostsPage = () => {
 	useEffect(() => {
 		const fetchMyPosts = async () => {
 			try {
-				const { data } = await axios.get('/posts/user/myposts')
+				const { data } = await axios.get('/posts/myposts')
 				setPosts(data)
 				firstRender.current = false
 				if (!data.length) {
