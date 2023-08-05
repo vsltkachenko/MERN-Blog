@@ -41,7 +41,7 @@ export const Navbar = () => {
 					</li>
 					<li>
 						<NavLink
-							to={'/posts'}
+							to={'/user/posts'}
 							className='text-xs text-gray-400 hover:text-white'
 							style={({ isActive }) => (isActive ? activeStyles : undefined)}
 						>
